@@ -65,6 +65,14 @@ pipeline {
           }
         }
       }
+      stage('Test') {
+         container('nodejs') {
+          steps {
+                echo 'Testing..'
+                sh "npm run test"
+            }
+        }
+      }
       stage('Promote to Environments') {
         when {
           branch 'master'
