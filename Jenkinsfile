@@ -66,8 +66,8 @@ pipeline {
         }
       }
       stage('Test') {
-         container('nodejs') {
           steps {
+         container('nodejs') {
                 echo 'Testing..'
                 sh "npm run test"
             }
